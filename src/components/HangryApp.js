@@ -3,6 +3,8 @@ import axios from 'axios';
 import Footer from './Footer';
 import MealDisplay from './MealDisplay';
 import MealGenerator from './MealGenerator';
+import '../styles/HangryAppStyles.css';
+import { Paper } from '@mui/material';
 
 export default function HangryApp() {
 
@@ -17,9 +19,12 @@ export default function HangryApp() {
 
     return (
         <div className="hangry-app">
-            <h1>Hangry</h1>
-            <h3>When you need meal ideas, now.</h3>
-            <img src='./logo512.png' alt='Hangry logo of a hot pepper'></img>
+            <Paper elevation={3} className='hangry-app-header'>
+                <h1 className='app-title'>Hangry</h1>
+                <h3 className='app-tagline'>When you need meal ideas, now.</h3>
+                <img src='./logo512.png' alt='Hangry logo of a hot pepper' className='app-logo' />
+            </Paper>
+
             <MealGenerator getRandomRecipe={ getRandomRecipe } />
             <MealDisplay currentRecipes={ foundRecipes } />
             <Footer />

@@ -12,7 +12,7 @@ export default function MealDisplay(props) {
                     <h3>How about some...</h3>
                     <h2>{ currentRecipes.recipes[0].title }</h2>
                     <div className="recipeImage">
-                        <span id="image" v-html="recipeImage"></span>
+                        <img src={ currentRecipes.recipes[0].image } alt={ currentRecipes.recipes[0].title }></img>
                     </div>
                     <div className="recipeSummary">
                         <span 

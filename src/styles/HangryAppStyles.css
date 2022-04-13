@@ -1,0 +1,15 @@
+.hangry-app-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1rem;
+
+}
+
+.app-logo {
+    max-width: 300px;
+    margin-bottom: 1rem;
+}
