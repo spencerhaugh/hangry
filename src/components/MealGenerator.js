@@ -9,12 +9,13 @@ export default function MealGenerator(props) {
 
     return (
         <Paper 
-            className='mealGenerator-background'
+            className='meal-generator-background'
             elevation={3}>
                 <h4>Need a meal idea??</h4>
                 <Button 
-                    variant='contained' 
-                    color='secondary'
+                    variant='outlined' 
+                    size='large'
+                    color='error'
                     onClick={ getRandomRecipe }>Hit me!
                 </Button>
         </Paper>

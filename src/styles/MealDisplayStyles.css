@@ -1,0 +1,42 @@
+.meal-display-background {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 80%;
+    padding: 2rem;
+    margin: 2rem auto;
+}
+
+.meal-display-main {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.meal-display-option {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.recipe-summary {
+    margin: 1rem 2rem 1rem 1rem;
+    padding: 1.5rem;
+}
+
+.recipe-summary-details {
+    width: 350px;
+}
+
+.recipe-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.recipe-stats p:last-of-type {
+    margin-bottom: 2rem;
+}
