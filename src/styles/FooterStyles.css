@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: big_noodle_titling, Helvetica, Arial;
+    font-size: 2rem;
     margin: 2rem auto;
     padding-top: 2rem;
     width: 50%;
