@@ -19,9 +19,14 @@
     width: 100%;
 }
 
+.recipe-image {
+    max-width: 60%;
+}
+
 .recipe-summary {
     margin: 1rem 2rem 1rem 1rem;
     padding: 1.5rem;
+    min-width: 40%;
 }
 
 .recipe-summary-details {
