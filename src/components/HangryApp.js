@@ -20,7 +20,7 @@ export default function HangryApp() {
     return (
         <div className="hangry-app">
             <Paper elevation={3} className='hangry-app-header'>
-                <h1 className='app-title'>hangry</h1>
+                <h1 className='app-title'>hangry!</h1>
                 <h3 className='app-tagline'>When you need meal ideas, now.</h3>
                 <img src='./logo512.png' alt='Hangry logo of a hot pepper' className='app-logo' />
             

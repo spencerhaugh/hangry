@@ -1,11 +1,16 @@
 import React from 'react';
 import '../styles/MealDisplayStyles.css';
+import { adjectives } from '../utils/adjectives';
 
 import { Paper, Card, Button } from '@mui/material';
 
 export default function MealDisplay(props) {
 
     const { currentRecipes } = props;
+
+    const getAdjective = () => {
+        return adjectives[Math.floor(Math.random() * adjectives.length)]
+    }
 
     return (
         <Paper 
@@ -14,7 +19,7 @@ export default function MealDisplay(props) {
                 {
                     currentRecipes ? 
                     <div className="meal-display-main">
-                        <h3>How about some...</h3>
+                        <h3>How about some { getAdjective() }</h3>
                         <h2>{ currentRecipes.recipes[0].title }</h2>
                         <Paper elevation={6} className="meal-display-option">
                             <img 

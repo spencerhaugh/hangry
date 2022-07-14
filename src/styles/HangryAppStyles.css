@@ -3,12 +3,12 @@
 @font-face {
     font-family: "Dagsen_Inked";
     src: local("Dagsen_Inked"),
-    url(./fonts/Dagsen_Inked.otf) format("opentype")
+    url(../fonts/Dagsen_Inked.otf) format("opentype")
   }
   @font-face {
     font-family: "big_noodle_titling";
     src: local("big_noodle_titling"),
-    url(./fonts/big_noodle_titling.ttf) format("truetype")
+    url(../fonts/big_noodle_titling.ttf) format("truetype")
   }
 
 .hangry-app {
@@ -36,6 +36,7 @@
 .app-tagline {
     font-family: big_noodle_titling, Helvetica, Arial;
     max-width: 100%;
+    font-size: 2rem;
 }
 
 .app-logo {
