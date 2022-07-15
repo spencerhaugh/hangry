@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/MealDisplayStyles.css';
 import { adjectives } from '../utils/adjectives';
 
@@ -10,8 +10,14 @@ export default function MealDisplay(props) {
     const { currentRecipes, getRandomRecipe } = props;
     const recipeOption = currentRecipes.recipes[0];
 
+    const ref = useRef();
+
     const getAdjective = () => {
         return adjectives[Math.floor(Math.random() * adjectives.length)]
+    }
+
+    const handleScroll = () => {
+        ref.current.scrollIntoView({behavior: 'smooth'});
     }
 
     return (
@@ -21,7 +27,7 @@ export default function MealDisplay(props) {
             >
                 {
                     currentRecipes ? 
-                    <div className="meal-display-main">
+                    <div className="meal-display-main" ref={ref}>
                         <h3>How about some { getAdjective() }</h3>
                         <h2>{ recipeOption.title }</h2>
                         <Paper elevation={6} className="meal-display-option">
@@ -57,10 +63,12 @@ export default function MealDisplay(props) {
                                         Get This Recipe!
                                 </Button>
                         </Card>
-                        <MealGenerator 
-                            getRandomRecipe={ getRandomRecipe } 
-                            btnText={'Fuck this, try something else'}  
-                        />
+                        <div onClick={ handleScroll }>
+                            <MealGenerator 
+                                getRandomRecipe={ getRandomRecipe } 
+                                btnText={'Fuck this, try something else'}
+                                />
+                        </div>
                     </div>
                     : 
                         ''
