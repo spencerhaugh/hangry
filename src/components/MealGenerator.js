@@ -5,18 +5,19 @@ import '../styles/MealGeneratorStyles.css';
 
 
 export default function MealGenerator(props) {
-    const { getRandomRecipe } = props
+    const { getRandomRecipe, btnText, message } = props
 
     return (
         <Paper 
             className='meal-generator-background'
             elevation={3}>
-                <h4>Need a meal idea??</h4>
+                { message ? <h4> { message } </h4> : '' }
                 <Button 
                     variant='outlined' 
                     size='large'
                     color='error'
-                    onClick={ getRandomRecipe }>Hit me!
+                    onClick={ getRandomRecipe }>
+                        { btnText }
                 </Button>
         </Paper>
     )

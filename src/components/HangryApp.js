@@ -24,13 +24,13 @@ export default function HangryApp() {
                 <h3 className='app-tagline'>When you need meal ideas, now.</h3>
                 <img src='./logo512.png' alt='Hangry logo of a hot pepper' className='app-logo' />
             
-            <MealGenerator getRandomRecipe={ getRandomRecipe } />
+            <MealGenerator getRandomRecipe={ getRandomRecipe } btnText={'Hit me!'} message={'Need a meal idea??'} />
             
             </Paper>
 
             {
                 foundRecipes ?
-                <MealDisplay currentRecipes={ foundRecipes } />
+                <MealDisplay currentRecipes={ foundRecipes } getRandomRecipe={ getRandomRecipe } />
                 : ''
             }
             <Footer />

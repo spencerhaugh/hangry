@@ -3,10 +3,12 @@ import '../styles/MealDisplayStyles.css';
 import { adjectives } from '../utils/adjectives';
 
 import { Paper, Card, Button } from '@mui/material';
+import MealGenerator from './MealGenerator';
 
 export default function MealDisplay(props) {
 
-    const { currentRecipes } = props;
+    const { currentRecipes, getRandomRecipe } = props;
+    const recipeOption = currentRecipes.recipes[0];
 
     const getAdjective = () => {
         return adjectives[Math.floor(Math.random() * adjectives.length)]
@@ -15,22 +17,23 @@ export default function MealDisplay(props) {
     return (
         <Paper 
             elevation={3} 
-            className="meal-display-background">
+            className="meal-display-background"
+            >
                 {
                     currentRecipes ? 
                     <div className="meal-display-main">
                         <h3>How about some { getAdjective() }</h3>
-                        <h2>{ currentRecipes.recipes[0].title }</h2>
+                        <h2>{ recipeOption.title }</h2>
                         <Paper elevation={6} className="meal-display-option">
                             <img 
                                 className='recipe-image'
-                                src={ currentRecipes.recipes[0].image } 
-                                alt={ currentRecipes.recipes[0].title } />
+                                src={ recipeOption.image } 
+                                alt={ recipeOption.title } />
 
-                            <Paper elevation={3} className="recipe-summary">
+                            <Paper elevation={3} className="recipe-summary-paper">
                                 <div 
                                     className="recipe-summary-details" 
-                                    dangerouslySetInnerHTML={{__html: currentRecipes.recipes[0].summary }}>
+                                    dangerouslySetInnerHTML={{__html: recipeOption.summary }}>
                                 </div>
                             </Paper>
                         </Paper>
@@ -40,20 +43,24 @@ export default function MealDisplay(props) {
                             variant='outlined'>
                                 <h4>Quick & Dirty Details</h4>
 
-                                <p>Ready in { currentRecipes.recipes[0].readyInMinutes } minutes!</p>
-                                <p>Vegetarian: { currentRecipes.recipes[0].vegetarian ? "Yes!" : "Not this one" }</p>
-                                <p>WW Smart Points: { currentRecipes.recipes[0].weightWatcherSmartPoints }</p>
-                                <p>Gluten Free: { currentRecipes.recipes[0].glutenFree ? "Yes!" : "Not this one :("}</p>
+                                <p>Ready in { recipeOption.readyInMinutes } minutes!</p>
+                                <p>Vegetarian: { recipeOption.vegetarian ? "Yes!" : "Not this one" }</p>
+                                <p>WW Smart Points: { recipeOption.weightWatcherSmartPoints }</p>
+                                <p>Gluten Free: { recipeOption.glutenFree ? "Yes!" : "Not this one :("}</p>
                                 <Button 
                                     variant='contained' 
                                     color='error'
-                                    href={currentRecipes.recipes[0].sourceUrl}
+                                    href={recipeOption.sourceUrl}
                                     target="_blank"
                                     rel="noopener"
                                     >
                                         Get This Recipe!
                                 </Button>
                         </Card>
+                        <MealGenerator 
+                            getRandomRecipe={ getRandomRecipe } 
+                            btnText={'Fuck this, try something else'}  
+                        />
                     </div>
                     : 
                         ''

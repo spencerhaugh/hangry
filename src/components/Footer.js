@@ -4,9 +4,7 @@ import '../styles/FooterStyles.css';
 export default function Footer() {
     return (
         <div className='footer'>
-            <p>
-                Matching hangry people with great meals since 2020!
-            </p>
+            Matching hangry people with great meals since 2020!
         </div>
     )
 }

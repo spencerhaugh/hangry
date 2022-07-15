@@ -12,8 +12,12 @@
   }
 
 .hangry-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
-    width: 100vw;
+    width: 100%;
 }
 
 .hangry-app-header {
@@ -29,12 +33,14 @@
 .app-title {
     font-family: Dagsen_Inked, Helvetica, Arial;
     font-size: 5rem;
+    text-align: center;
     margin: 0 auto;
     max-width: 100%;
 }
 
 .app-tagline {
     font-family: big_noodle_titling, Helvetica, Arial;
+    text-align: center;
     max-width: 100%;
     font-size: 2rem;
 }
@@ -43,4 +49,28 @@
     max-width: 300px;
     margin-bottom: .5rem;
     padding: .5rem;
+}
+
+@media (max-width: 900px) {
+    .hangry-app-header {
+        width: 80%;
+    }
+    .app-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .hangry-app-header {
+        width: 95%;
+    }
+    .app-title {
+        font-size: 2rem;
+    }
+    .app-tagline {
+        font-size: 1rem;
+    }
+    .app-logo {
+        max-width: 200px;
+    }
 }

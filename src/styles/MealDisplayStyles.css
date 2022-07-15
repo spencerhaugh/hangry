@@ -22,17 +22,18 @@
 
 .recipe-image {
     max-width: 60%;
+    object-fit: contain;
 }
 
-.recipe-summary {
-    margin: 1rem 2rem 1rem 1rem;
+.recipe-summary-paper {
     padding: 1.5rem;
     min-width: 40%;
+    max-width: 100%;
+    overflow: auto;
 }
 
 .recipe-summary-details {
-    max-width: 40%;
-    overflow: auto;
+    max-width: 100%;
 }
 
 .recipe-stats {
@@ -46,4 +47,18 @@
 
 .recipe-stats p:last-of-type {
     margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+    .meal-display-background {
+        width: 90%;
+    }
+    .meal-display-option {
+        flex-direction: column;
+        max-height: initial;
+    }
+    .recipe-image {
+        max-width: 100%;
+        object-fit: cover;
+    }
 }
