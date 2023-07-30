@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Paper } from '@mui/material';
 import '../styles/MealGeneratorStyles.css';
+import { Button, Paper } from '@mui/material';
 
 
 
